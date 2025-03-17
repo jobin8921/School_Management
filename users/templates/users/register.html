@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <select name="role">
+            <option value="admin">Admin</option>
+            <option value="staff">Staff</option>
+            <option value="student">Student</option>
+        </select><br>
+        <input type="text" name="username" placeholder="Username" required><br>
+        <input type="email" name="email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Password" required><br>
+        
+        <!-- Conditional Fields -->
+        <div id="staff_fields">
+            <input type="text" name="department" placeholder="Department"><br>
+        </div>
+        <div id="student_fields">
+            <input type="text" name="roll_number" placeholder="Roll Number"><br>
+            <input type="text" name="course" placeholder="Course"><br>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+    <a href="{% url 'login' %}">Login</a>
+</body>
+</html>
