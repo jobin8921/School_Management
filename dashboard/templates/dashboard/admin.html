@@ -4,11 +4,9 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <h1>Welcome, {{ request.session.username }}</h1>
-    <h2>Role: {{ request.session.role }}</h2>
+    <h1>Welcome, Admin</h1>
     <a href="{% url 'logout' %}">Logout</a>
-
-    <h3>Dashboard Features:</h3>
+    <h2>Admin Dashboard Features</h2>
     <ul>
         <li>Manage Students</li>
         <li>Manage Teachers</li>
